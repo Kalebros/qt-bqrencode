@@ -23,7 +23,8 @@ SOURCES += \
     qrencode/qrspec.c \
     qrencode/rscode.c \
     qrencode/split.c \
-    bqrcode.cpp
+    bqrcode.cpp \
+    bqrcodegen.cpp
 
 HEADERS +=\
         bqrencode_global.h \
@@ -38,7 +39,8 @@ HEADERS +=\
     qrencode/qrspec.h \
     qrencode/rscode.h \
     qrencode/split.h \
-    bqrcode.h
+    bqrcode.h \
+    bqrcodegen.h
 
 unix {
     target.path = /usr/lib
