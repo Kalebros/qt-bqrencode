@@ -49,7 +49,7 @@ public:
      * @return bool, true: it's valid, false: it's not
      * @note Doesn't modifies the object's state.
      */
-    inline bool isReady() const;
+    bool isReady() const;
 
     /*!
       Width of the code.
@@ -59,7 +59,7 @@ public:
       @note Doesn't modifies the object's state
       @pre BQRCode object MUST be ready; this method will return 0 otherwise.
       */
-    inline unsigned int width() const;
+    unsigned int width() const;
 
     /*!
       Version of the code
@@ -68,7 +68,7 @@ public:
       @note Don't modifies the object's state
       @pre BQRCode object MUST be ready; this method will return -1 otherwise.
       */
-    inline int version() const;
+    int version() const;
 
     /*!
       Pixel data at (i,j)

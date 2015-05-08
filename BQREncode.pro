@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       -= gui
+QT       += core gui
 
 TARGET = BQREncode
 TEMPLATE = lib
@@ -24,7 +24,9 @@ SOURCES += \
     qrencode/rscode.c \
     qrencode/split.c \
     bqrcode.cpp \
-    bqrcodegen.cpp
+    bqrcodegen.cpp \
+    bqrimagefactory.cpp \
+    bqrdefaultimagefactory.cpp
 
 HEADERS +=\
         bqrencode_global.h \
@@ -40,7 +42,9 @@ HEADERS +=\
     qrencode/rscode.h \
     qrencode/split.h \
     bqrcode.h \
-    bqrcodegen.h
+    bqrcodegen.h \
+    bqrimagefactory.h \
+    bqrdefaultimagefactory.h
 
 unix {
     target.path = /usr/lib
