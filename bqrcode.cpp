@@ -131,8 +131,17 @@ bool BQRCode::isActive(unsigned int i,unsigned int j) const
   */
 BQRCode *BQRCode::copyOf(const BQRCode *bqrCode)
 {
-    /// @todo Implements BQRCode::copyOf
-    return 0;
+    //Build a new QRcode struct
+    QRcode *copyOfCode=(QRcode*)malloc(sizeof(QRcode));
+
+    unsigned char *copyOfData=new unsigned char[bqrCode->_code->width^2];
+    memcpy(copyOfData,bqrCode->_code->data,bqrCode->_code->width^2);
+
+    copyOfCode->data=copyOfData;
+    copyOfCode->version=bqrCode->_code->version;
+    copyOfCode->width=bqrCode->_code->width;
+
+    return new BQRCode(bqrCode->parent(),copyOfCode);
 }
 
 /*!
@@ -140,7 +149,16 @@ BQRCode *BQRCode::copyOf(const BQRCode *bqrCode)
   */
 BQRCode *BQRCode::copyOf(const BQRCode &bqrCode)
 {
-    return 0;
+    QRcode *copyOfCode=(QRcode*)malloc(sizeof(QRcode));
+
+    unsigned char *copyOfData=new unsigned char[bqrCode._code->width^2];
+    memcpy(copyOfData,bqrCode._code->data,bqrCode._code->width^2);
+
+    copyOfCode->data=copyOfData;
+    copyOfCode->version=bqrCode._code->version;
+    copyOfCode->width=bqrCode._code->width;
+
+    return new BQRCode(bqrCode.parent(),copyOfCode);
 }
 
 }
