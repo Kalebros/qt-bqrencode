@@ -153,8 +153,9 @@ BQRCode *BQRCode::copyOf(const BQRCode *bqrCode)
     //Build a new QRcode struct
     QRcode *copyOfCode=(QRcode*)malloc(sizeof(QRcode));
 
-    unsigned char *copyOfData=new unsigned char[bqrCode->_code->width^2];
-    memcpy(copyOfData,bqrCode->_code->data,bqrCode->_code->width^2);
+    unsigned char *copyOfData=new unsigned char[bqrCode->_code->width*bqrCode->_code->width];
+    for(int i=0;i<(bqrCode->_code->width*bqrCode->_code->width);i++)
+        copyOfData[i]=bqrCode->_code->data[i];
 
     copyOfCode->data=copyOfData;
     copyOfCode->version=bqrCode->_code->version;
@@ -170,8 +171,9 @@ BQRCode *BQRCode::copyOf(const BQRCode &bqrCode)
 {
     QRcode *copyOfCode=(QRcode*)malloc(sizeof(QRcode));
 
-    unsigned char *copyOfData=new unsigned char[bqrCode._code->width^2];
-    memcpy(copyOfData,bqrCode._code->data,bqrCode._code->width^2);
+    unsigned char *copyOfData=new unsigned char[bqrCode._code->width*bqrCode._code->width];
+    for(int i=0;i<(bqrCode._code->width*bqrCode._code->width);i++)
+        copyOfData[i]=bqrCode._code->data[i];
 
     copyOfCode->data=copyOfData;
     copyOfCode->version=bqrCode._code->version;
