@@ -13,6 +13,7 @@ DEFINES += BQRENCODE_LIBRARY
 
 INCLUDEPATH += .
 
+
 SOURCES += \
     qrencode/bitstream.c \
     qrencode/mask.c \
@@ -50,3 +51,6 @@ unix {
     target.path = /usr/lib
     INSTALLS += target
 }
+
+DISTFILES += \
+    BQREncode.pri
