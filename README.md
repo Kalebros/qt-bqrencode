@@ -7,7 +7,21 @@ development version at https://github.com/fukuchi/libqrencode/blob/master/qrenco
 
 ##Compile
 
-Just clone this repository and use *qmake* to compile it.
+Just clone this repository and use *qmake* to compile it, BUT...
+
+### Compile for Android
+
+... if you want to use this library in an Android proyect, I strongly recommend you
+to include the .PRI file in your project file (.pro).
+
+```
+# Your project .PRO
+# ...
+
+include (<qt-bqrencode dir>/BQREncode.pri)
+
+# ...
+```
 
 ##Usage
 
