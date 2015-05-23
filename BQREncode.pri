@@ -19,7 +19,8 @@ SOURCES += \
     $$PWD\bqrcode.cpp \
     $$PWD\bqrcodegen.cpp \
     $$PWD\bqrimagefactory.cpp \
-    $$PWD\bqrdefaultimagefactory.cpp
+    $$PWD\bqrdefaultimagefactory.cpp \
+    $$PWD\bqrcolorfactory.cpp
 
 HEADERS +=\
         $$PWD\bqrencode_global.h \
@@ -37,4 +38,5 @@ HEADERS +=\
     $$PWD\bqrcode.h \
     $$PWD\bqrcodegen.h \
     $$PWD\bqrimagefactory.h \
-    $$PWD\bqrdefaultimagefactory.h
+    $$PWD\bqrdefaultimagefactory.h \
+    $$PWD\bqrcolorfactory.h

@@ -27,7 +27,8 @@ SOURCES += \
     bqrcode.cpp \
     bqrcodegen.cpp \
     bqrimagefactory.cpp \
-    bqrdefaultimagefactory.cpp
+    bqrdefaultimagefactory.cpp \
+    bqrcolorfactory.cpp
 
 HEADERS +=\
         bqrencode_global.h \
@@ -45,7 +46,8 @@ HEADERS +=\
     bqrcode.h \
     bqrcodegen.h \
     bqrimagefactory.h \
-    bqrdefaultimagefactory.h
+    bqrdefaultimagefactory.h \
+    bqrcolorfactory.h
 
 unix {
     target.path = /usr/lib
