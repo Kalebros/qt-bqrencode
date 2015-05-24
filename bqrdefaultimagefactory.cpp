@@ -30,14 +30,14 @@ QImage *BQRDefaultImageFactory::buildImageFromCode(const BQRCode *code)
     if(!code->isReady())
         return 0;
 
-    QImage *res=new QImage(code->width(),code->width(),QImage::Format_RGB32);
+    QImage *res=new QImage(code->width()+4,code->width()+4,QImage::Format_RGB32);
 
     res->fill(Qt::white);
     QRgb blackPixel=qRgb(0,0,0);
 
-    for(unsigned int i=0;i<code->width();i++) {
-        for(unsigned int j=0;j<code->width();j++) {
-            if(code->isActive(i,j))
+    for(unsigned int i=4;i<code->width()+4;i++) {
+        for(unsigned int j=4;j<code->width()+4;j++) {
+            if(code->isActive(i-4,j-4))
                 res->setPixel(i,j,blackPixel);
         }
     }
@@ -50,14 +50,14 @@ QImage *BQRDefaultImageFactory::buildImageFromCode(const BQRCode &code)
     if(!code.isReady())
         return 0;
 
-    QImage *res=new QImage(code.width(),code.width(),QImage::Format_RGB32);
+    QImage *res=new QImage(code.width()+4,code.width()+4,QImage::Format_RGB32);
 
     res->fill(Qt::white);
     QRgb blackPixel=qRgb(0,0,0);
 
-    for(unsigned int i=0;i<code.width();i++) {
-        for(unsigned int j=0;j<code.width();j++) {
-            if(code.isActive(i,j))
+    for(unsigned int i=4;i<code.width()+4;i++) {
+        for(unsigned int j=4;j<code.width()+4;j++) {
+            if(code.isActive(i-4,j-4))
                 res->setPixel(i,j,blackPixel);
         }
     }

@@ -38,7 +38,7 @@ BQRCode::BQRCode(QObject *parent, QRcode *code) :
 BQRCode::BQRCode(QObject *parent, int width, int version, unsigned char *info) :
     QObject(parent)
 {
-    if(widtth==-1 || version==-1 || info=0) {
+    if(width==-1 || version==-1 || info==0) {
         _code=0;
         return;
     }

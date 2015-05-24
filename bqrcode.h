@@ -39,7 +39,7 @@ public:
       @overload
       */
 
-    BQRCode(QObject *parent=0,int width=-1,int version=-1,unsigned char *info=0);
+    BQRCode(QObject *parent,int width,int version,unsigned char *info);
 
     /*!
       Free resources
