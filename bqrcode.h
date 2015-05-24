@@ -36,6 +36,12 @@ public:
     explicit BQRCode(QObject *parent = 0,QRcode *code=0);
 
     /*!
+      @overload
+      */
+
+    BQRCode(QObject *parent=0,int width=-1,int version=-1,unsigned char *info=0);
+
+    /*!
       Free resources
       */
     ~BQRCode();

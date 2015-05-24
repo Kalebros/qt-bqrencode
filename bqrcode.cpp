@@ -33,6 +33,22 @@ BQRCode::BQRCode(QObject *parent, QRcode *code) :
 }
 
 /*!
+  @overload
+  */
+BQRCode::BQRCode(QObject *parent, int width, int version, unsigned char *info) :
+    QObject(parent)
+{
+    if(widtth==-1 || version==-1 || info=0) {
+        _code=0;
+        return;
+    }
+    _code=new QRcode();
+    _code->version=version;
+    _code->width=width;
+    _code->data=info;
+}
+
+/*!
   Free resources
   */
 BQRCode::~BQRCode()
