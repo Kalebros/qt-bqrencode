@@ -42,3 +42,43 @@ QImage *qrCodeImage=factory->buildImageFromCode(codeQR);
 
 //...
 ```
+If you want a colorful code, use a **BQRColorFactory** object and set your
+favorite color as the active pixel's color. But *BEWARE!*, because some colors
+will be easier to read than others.
+
+```c++
+//...
+
+BQRImageFactory *factory=new BQRColorFactory(this);
+
+factory->setColor(QColor("limegreen"));
+
+QImage *qrCodeImage=factory->buildImageFromCode(codeQR);
+
+//...
+```
+If you want a decorated QR code, use a **BQRDecoratedColorFactory** object and
+the path of a nice image. Use a image with a transparent background, centered and
+with the same width and height for a better result.
+
+If you use this factory, remember: your image will be scalated, so you must give
+a valid size before build your qr code.
+
+```c++
+//...
+
+BQRImageFactory *factory=new BQRDecoratedColorFactory(this);
+
+factory->setColor(QColor("limegreen"));
+factory->setPathDecoration("/some/path/for/niceImage");
+factory->setSize(QSize(300,300));
+
+QImage *qrCodeImage=factory->buildImageFromCode(codeQR);
+
+//...
+```
+
+##A nice example
+
+Here's a decorated QR image. Try it!
+[Fukuchi works](qrimage/fukuchiQrCode.png)
