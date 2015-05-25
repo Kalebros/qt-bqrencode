@@ -23,6 +23,10 @@ public:
     QColor getColor() const {
         return _color;
     }
+    virtual QImage *buildImageFromCode(const BQRCode &code);
+    virtual QImage *buildImageFromCode(const BQRCode *code);
+
+public slots:
 
     /*!
      * Set the active pixel's color (black by default)
@@ -33,9 +37,6 @@ public:
     void setColor(QColor c) {
         _color=c;
     }
-
-    virtual QImage *buildImageFromCode(const BQRCode &code);
-    virtual QImage *buildImageFromCode(const BQRCode *code);
 
 protected:
 
